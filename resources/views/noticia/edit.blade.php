@@ -48,6 +48,9 @@
                     @enderror
                 </div>
 
+                <!-- Mini Guía Markdown -->
+                @include('partials.markdown-guide')
+
                 <!-- Botones de acción -->
                 <div class="d-flex justify-content-between align-items-center">
                     <button type="submit" class="btn btn-primary">Actualizar Noticia</button>

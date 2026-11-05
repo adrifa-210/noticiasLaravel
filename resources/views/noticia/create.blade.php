@@ -47,6 +47,9 @@
                     @enderror
                 </div>
 
+                <!-- Mini Guía Markdown -->
+                @include('partials.markdown-guide')
+
                 <!-- Campo Seleccionar Archivo -->
                 <div class="mb-3">
                     <label for="archivo" class="form-label">Seleccionar archivo (txt, md)</label>
