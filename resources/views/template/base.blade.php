@@ -23,11 +23,11 @@
         <div class="@yield('container_class', 'container py-4')">
             <div class="row">
                 <!-- Blog entries / Post content-->
-                <div class="col-lg-8">
+                <div class="@yield('content_col_class', 'col-lg-8')">
                     @yield('content')
                 </div>
                 <!-- Side widgets-->
-                <div class="col-lg-4">
+                <div class="@yield('sidebar_col_class', 'col-lg-4')">
                     @include('partials.sidebar')
                 </div>
             </div>
