@@ -1,29 +1,23 @@
 /**
- * InfoPulso - Estilos para la Guía Interactiva de Markdown
+ * InfoPulso - Estilos para la Guía de Formato Markdown
+ * Basado estrictamente en las variables y componentes de styles.css
  */
 
-.markdown-format-btn {
-    transition: all 0.18s ease-in-out;
+.markdown-guide-table tbody tr {
     cursor: pointer;
-    border-color: #dee2e6;
-    background-color: #ffffff;
-    user-select: none;
 }
 
-.markdown-format-btn:hover {
-    border-color: #0d6efd !important;
-    background-color: #f0f7ff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 0.25rem 0.5rem rgba(13, 110, 253, 0.12);
+.markdown-guide-table tbody tr:hover code {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
 }
 
-.markdown-format-btn:active {
-    transform: translateY(0);
-    box-shadow: none;
-    background-color: #e2edfd !important;
-}
-
-.markdown-format-btn code {
+.markdown-guide-table code {
     font-size: 0.875rem;
+    color: var(--bs-code-color);
+    background-color: var(--bs-gray-100);
+    padding: 0.15rem 0.35rem;
+    border-radius: var(--bs-border-radius-sm);
+    border: 1px solid var(--bs-border-color);
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
-
