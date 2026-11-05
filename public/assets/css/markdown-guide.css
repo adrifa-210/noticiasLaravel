@@ -1,0 +1,29 @@
+/**
+ * InfoPulso - Estilos para la Guía Interactiva de Markdown
+ */
+
+.markdown-format-btn {
+    transition: all 0.18s ease-in-out;
+    cursor: pointer;
+    border-color: #dee2e6;
+    background-color: #ffffff;
+    user-select: none;
+}
+
+.markdown-format-btn:hover {
+    border-color: #0d6efd !important;
+    background-color: #f0f7ff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.5rem rgba(13, 110, 253, 0.12);
+}
+
+.markdown-format-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+    background-color: #e2edfd !important;
+}
+
+.markdown-format-btn code {
+    font-size: 0.875rem;
+}
+
