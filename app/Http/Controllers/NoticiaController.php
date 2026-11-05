@@ -122,8 +122,9 @@ class NoticiaController extends Controller
                 'error' => 'La noticia o etiqueta ya existe.',
             ]);
         } catch (\Exception $e) {
-            echo 'global';
-            dd($e);
+            return back()->withInput()->withErrors([
+                'error' => 'Ocurrió un error inesperado al guardar la noticia. Por favor, inténtelo de nuevo.',
+            ]);
         }
 
         session(['success' => 'Noticia creada correctamente']);
@@ -179,8 +180,9 @@ class NoticiaController extends Controller
                 'error' => 'La noticia o etiqueta ya existe. Error de clave única duplicada',
             ]);
         } catch (\Exception $e) {
-            echo 'global';
-            dd($e);
+            return back()->withInput()->withErrors([
+                'error' => 'Ocurrió un error inesperado al actualizar la noticia. Por favor, inténtelo de nuevo.',
+            ]);
         }
 
         return redirect()->route('noticia.edit', ['noticia' => $noticia])->with(['success' => 'Noticia modificada correctamente']);
@@ -206,12 +208,13 @@ class NoticiaController extends Controller
         try {
             $noticia->delete();
         } catch (\Illuminate\Database\QueryException $e) {
-            return back()->withInput()->withErrors([
-                'error' => 'Error al eliminar la noticia. ' . $e->getMessage(),
+            return back()->withErrors([
+                'error' => 'Error al eliminar la noticia. No se puede completar la operación.',
             ]);
         } catch (\Exception $e) {
-            echo 'global';
-            dd($e);
+            return back()->withErrors([
+                'error' => 'Ocurrió un error inesperado al eliminar la noticia. Por favor, inténtelo de nuevo.',
+            ]);
         }
 
         return redirect()->route('noticia.index')->with(['success' => 'Noticia eliminada correctamente']);
